@@ -1,90 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ShopEase - Home</title>
   <style>
-    /* Basic Reset */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f6f8;
       color: #333;
     }
 
     header {
-      background-color: #0a66c2;
+      background: linear-gradient(to right, #0a66c2, #004080);
       color: white;
-      padding: 30px;
+      padding: 40px 20px;
       text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
     }
 
     nav {
-      background-color: #004080;
-      padding: 10px 0;
+      background-color: #003366;
       text-align: center;
+      padding: 12px 0;
     }
 
     nav a {
-      color: white;
+      color: #fff;
+      margin: 0 20px;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
+      font-size: 1em;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    main {
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+      color: rgb(13, 17, 235);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .hero .btn {
+      background-color: #0a66c2;
+      padding: 12px 20px;
+      border-radius: 5px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .products-section {
       padding: 40px 20px;
       text-align: center;
     }
 
+    .products-section h2 {
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
     .product {
       background-color: white;
-      display: inline-block;
-      width: 250px;
-      margin: 15px;
       padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
     }
 
     .product h3 {
       margin-bottom: 10px;
+      color: #0a66c2;
     }
 
     .product p {
-      margin: 5px 0;
+      margin-bottom: 10px;
+      font-size: 1.1em;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
+      padding: 10px 16px;
       background-color: #0a66c2;
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      font-weight: bold;
     }
 
-    .btn:hover {
-      background-color: #004080;
+    .testimonials, .newsletter {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .testimonials h2, .newsletter h2 {
+      margin-bottom: 20px;
+    }
+
+    .testimonial {
+      margin-bottom: 15px;
+      font-style: italic;
+      color: #555;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .newsletter .btn {
+      margin-top: 10px;
     }
 
     footer {
-      background-color: #333;
+      background-color: #222;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 20px 10px;
+    }
+
+    @media (max-width: 768px) {
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 10px;
+      }
+
+      .hero h2 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
@@ -92,35 +179,67 @@
 
   <header>
     <h1>ShopEase</h1>
-    <p>Welcome to your favorite online store!</p>
+    <p>Your favorite place for the best deals!</p>
   </header>
 
   <nav>
     <a href="#">Home</a>
-    <a href="#">Shop</a>
+    <a href="shoppage.html">Shop</a>
     <a href="#">Deals</a>
+    <a href="#">About</a>
     <a href="#">Contact</a>
     <a href="#">Cart</a>
   </nav>
 
-  <main>
+  <section class="hero">
+    <h1>End of Summer Sale!</h1>
+    <p>Up to 50% off on select electronics and accessories</p>
+    <a href="#" class="btn">Shop Now</a>
+  </section>
+
+  <section class="products-section">
     <h2>Featured Products</h2>
-    <div class="product">
-      <h3>Smartwatch</h3>
-      <p>$129.99</p>
-      <a href="#" class="btn">Buy Now</a>
+    <div class="products">
+      <div class="product">
+        <h3>Smartwatch</h3>
+        <p>$129.99</p>
+        <p>Track your fitness and stay connected.</p>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="product">
+        <h3>Wireless Earbuds</h3>
+        <p>$59.99</p>
+        <p>High-quality sound with noise cancellation.</p>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="product">
+        <h3>Backpack</h3>
+        <p>$39.99</p>
+        <p>Durable, stylish, and spacious for all uses.</p>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="product">
+        <h3>Bluetooth Speaker</h3>
+        <p>$89.99</p>
+        <p>Portable and waterproof with deep bass.</p>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
     </div>
-    <div class="product">
-      <h3>Wireless Earbuds</h3>
-      <p>$59.99</p>
-      <a href="#" class="btn">Buy Now</a>
-    </div>
-    <div class="product">
-      <h3>Backpack</h3>
-      <p>$39.99</p>
-      <a href="#" class="btn">Buy Now</a>
-    </div>
-  </main>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <p class="testimonial">"ShopEase always has the best prices and fast delivery!" – Jamie R.</p>
+    <p class="testimonial">"Love the quality of products and great customer support!" – Lee A.</p>
+    <p class="testimonial">"Highly recommend! Very smooth shopping experience." – Priya M.</p>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join Our Newsletter</h2>
+    <p>Get exclusive deals and updates delivered to your inbox.</p>
+    <input type="email" placeholder="Enter your email" />
+    <div><a href="#" class="btn">Subscribe</a></div>
+  </section>
 
   <footer>
     <p>&copy; 2025 ShopEase. All rights reserved.</p>
